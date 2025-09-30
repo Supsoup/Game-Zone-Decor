@@ -1,0 +1,222 @@
+:root{
+  --bg:#e6eef2;           /* เทาอมฟ้าจางพื้นหลัง */
+  --card:#ffffff;         /* สีการ์ด */
+  --ink:#0b1b28;          /* สีตัวอักษรหลัก */
+  --muted:#6b7b86;        /* สีอักษรรอง */
+  --line:#d6dde3;         /* เส้นคั่นเทาอ่อน */
+  --pill:#cbe1ee;         /* พื้นปุ่มมนอ่อน */
+  --pill-text:#0d2a3b;
+  --primary:#2a8ec9;      /* สีปุ่มหลัก */
+  --primary-ink:#ffffff;  /* ตัวอักษรบนปุ่มหลัก */
+  --brand:#2a8ec9;
+  --radius-xl:22px;
+  --radius-lg:16px;
+  --radius-md:12px;
+  --shadow:0 8px 24px rgba(13,42,59,.08);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"Kanit",system-ui,-apple-system,Segoe UI,Roboto,Arial,"Noto Sans Thai",sans-serif;
+}
+
+/* -------- Topbar -------- */
+.topbar{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  padding:16px 20px;
+  background:#fff;
+  border-bottom:1px solid var(--line);
+}
+
+.brand-pill{
+  background:#d0ecff;               /* ฟ้าอ่อนคล้ายภาพ */
+  color:#0d334a;
+  padding:10px 18px;
+  border-radius:18px;
+  font-weight:900;
+  letter-spacing:.2px;
+  text-decoration:none;
+  display:inline-flex; align-items:center;
+  box-shadow:var(--shadow);
+}
+
+.search-pill{
+  flex:1;
+  display:flex; align-items:center; gap:10px;
+  background:#eceff3;
+  border-radius:24px;
+  padding:10px 14px;
+  max-width:520px;
+}
+.search-pill .icon{width:18px;height:18px;fill:#3d5360;opacity:.8}
+.search-pill input{
+  flex:1;
+  border:0; outline:none;
+  background:transparent;
+  font-size:16px;
+  color:var(--ink);
+}
+
+.top-actions{display:flex;align-items:center;gap:12px;margin-left:auto}
+.cart-btn{
+  width:48px;height:48px; display:grid; place-items:center;
+  border-radius:14px; background:#fff; box-shadow:var(--shadow);
+  text-decoration:none;
+}
+.cart-btn .icon{width:24px;height:24px;fill:#0e2634}
+.login-btn{
+  background:#2a8ec9;
+  color:#fff; padding:10px 16px; border-radius:14px;
+  font-weight:700; text-decoration:none; box-shadow:var(--shadow);
+}
+
+/* -------- Subbar -------- */
+.subbar{
+  display:flex; align-items:center; gap:14px;
+  padding:10px 20px; background:#fff; border-bottom:1px solid var(--line);
+}
+.pill.with-icon{
+  display:inline-flex; align-items:center; gap:8px;
+  background:#eef6fb; padding:10px 14px; border-radius:14px;
+  color:#0d334a; box-shadow:var(--shadow);
+}
+.pill.with-icon .icon{width:18px;height:18px;fill:#0d334a}
+.pill .chev{opacity:.7}
+.primary-btn{
+  margin-left:auto;
+  background:#2a8ec9; color:#fff; text-decoration:none;
+  padding:10px 16px; border-radius:14px; font-weight:700; box-shadow:var(--shadow);
+}
+
+/* -------- Main -------- */
+.container{max-width:1200px;margin:0 auto;padding:20px}
+.section-title{
+  text-align:center; font-size:28px; font-weight:900; margin:16px 0 8px;
+}
+
+/* -------- Grid / Card -------- */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:28px;
+  padding:10px 8px 40px;
+}
+@media (max-width:1100px){ .grid{grid-template-columns:repeat(3,1fr);} }
+@media (max-width:820px){ .grid{grid-template-columns:repeat(2,1fr);} }
+@media (max-width:520px){ .grid{grid-template-columns:1fr;} }
+
+.card{
+  background:var(--card);
+  border-radius:20px;
+  box-shadow:var(--shadow);
+  padding:16px 16px 12px;
+  display:flex; flex-direction:column; gap:10px;
+}
+.thumb{
+  height:180px; display:grid; place-items:center;
+}
+.thumb img{
+  max-width:100%; max-height:170px; object-fit:contain;
+}
+.divider{
+  height:3px; width:100%;
+  background:linear-gradient(to right, var(--line) 0 80%, transparent 80% 100%);
+  border-radius:3px;
+}
+.name{
+  font-size:18px; font-weight:800; line-height:1.25; margin:2px 0 0;
+}
+.price-row{
+  display:flex; justify-content:flex-end; align-items:center;
+}
+.price{
+  font-weight:900; letter-spacing:.3px;
+}
+
+/* -------- Footer -------- */
+.footer{padding:24px 16px; text-align:center; color:var(--muted)}
+.muted{color:var(--muted)}
+/* -------- SVG icon base -------- */
+.icon{display:block}
+
+/* ===== Dropdown ===== */
+.dropdown{position:relative; cursor:pointer; user-select:none}
+.dropdown .menu{
+  position:absolute; left:0; top:110%;
+  background:#fff; border:1px solid var(--line);
+  border-radius:12px; min-width:220px;
+  box-shadow:var(--shadow); padding:8px 0; margin:0;
+  list-style:none; display:none; z-index:10;
+}
+.dropdown.open .menu{display:block}
+.dropdown .menu li a{
+  display:block; padding:10px 14px; color:var(--ink);
+  text-decoration:none; white-space:nowrap;
+}
+.dropdown .menu li a:hover{background:#f0f6fa}
+
+/* ===== ปุ่มกรอบบางในการ์ด ===== */
+.btn-outline{
+  margin-top:8px;
+  display:inline-block;
+  padding:8px 12px;
+  border:2px solid var(--line);
+  border-radius:12px;
+  text-decoration:none;
+  color:var(--ink);
+  font-weight:700;
+}
+
+/* ===== หน้า Product Detail ===== */
+.pd-wrap{
+  display:grid; grid-template-columns:1fr 1.1fr; gap:28px;
+  background:transparent; align-items:start;
+}
+@media (max-width:900px){ .pd-wrap{grid-template-columns:1fr;}}
+.pd-media{
+  background:#fff; border-radius:20px; box-shadow:var(--shadow);
+  padding:20px; display:grid; place-items:center;
+}
+.pd-media img{max-width:100%; max-height:420px; object-fit:contain}
+.pd-info{
+  background:#fff; border-radius:20px; box-shadow:var(--shadow);
+  padding:24px;
+}
+.pd-name{margin:0 0 8px; font-size:28px; font-weight:900}
+.pd-meta{display:flex; gap:8px; margin-bottom:12px}
+.tag{
+  background:#eef6fb; color:#0d334a; padding:6px 10px;
+  border-radius:999px; font-weight:700; font-size:14px
+}
+.pd-price{font-weight:900; font-size:24px; margin:6px 0 14px}
+.pd-desc{color:var(--ink); opacity:.9}
+.qty{display:inline-flex; align-items:center; gap:8px; margin-right:10px}
+.qty input{
+  width:72px; padding:8px 10px; border:1px solid var(--line);
+  border-radius:10px; font:inherit
+}
+
+/* ===== ตะกร้า ===== */
+.cart-table{
+  width:100%; border-collapse:collapse; margin-bottom:20px;
+  background:#fff; border-radius:12px; overflow:hidden; box-shadow:var(--shadow);
+}
+.cart-table th,.cart-table td{
+  padding:10px; border-bottom:1px solid var(--line);
+}
+.cart-table th{background:#f0f6fa;text-align:left}
+
+.checkout-form{
+  display:flex; flex-direction:column; gap:16px;
+  background:#fff; padding:20px; border-radius:12px; box-shadow:var(--shadow);
+}
+.checkout-form input,.checkout-form textarea{
+  width:100%; padding:10px; border:1px solid var(--line); border-radius:8px; font:inherit;
+}
+.checkout-form button{align-self:flex-start}
