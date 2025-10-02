@@ -61,8 +61,9 @@ $csrf=$_SESSION['csrf'];
   <div style="flex:1"></div>
   <?php if ($me): ?>
     <span class="muted" style="margin-right:8px">สวัสดี, <?= htmlspecialchars($me['name']) ?></span>
+    <a class="btn-outline" href="account/profile.php" style="margin-right:8px">โปรไฟล์</a>
     <a class="btn-outline" href="account/orders.php" style="margin-right:8px">คำสั่งซื้อของฉัน</a>
-    <a class="btn-outline" href="auth/logout.php">ออก</a>
+    <a class="btn-outline" href="auth/logout.php">ออกจากระบบ</a>
   <?php else: ?>
     <a class="btn-outline" href="auth/login.php">เข้าสู่ระบบ</a>
     <a class="primary-btn" href="auth/register.php" style="margin-left:8px">สมัครสมาชิก</a>

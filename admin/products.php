@@ -33,7 +33,8 @@ $token = admin_csrf_token();
 <header class="topbar">
   <a class="brand-pill" href="orders.php">Admin</a>
   <div style="flex:1"></div>
-  <a class="btn-outline" href="products.php">สินค้า</a>
+  <a class="btn-outline" href="products.php">จัดการสินค้า</a>
+  <a class="btn-outline" href="orders.php">รายการคำสั่งซื้อ</a>
   <a class="btn-outline" href="logout.php">ออกจากระบบ</a>
 </header>
 

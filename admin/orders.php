@@ -24,6 +24,8 @@ $orders = $st->fetchAll();
 <header class="topbar">
   <a class="brand-pill" href="orders.php">Admin: Orders</a>
   <div style="flex:1"></div>
+  <a class="btn-outline" href="products.php">จัดการสินค้า</a>
+  <a class="btn-outline" href="orders.php">รายการคำสั่งซื้อ</a>
   <a class="btn-outline" href="logout.php">ออกจากระบบ</a>
 </header>
 
